@@ -23,38 +23,38 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
+        Me.CreateCourseButton = New System.Windows.Forms.Button()
+        Me.CoursesListBox = New System.Windows.Forms.CheckedListBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.PhoneTextBox = New System.Windows.Forms.TextBox()
+        Me.EditStudentButton = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.StundentNoticeTextBox = New System.Windows.Forms.RichTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.BirthdayDatePicker = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.FirstnameTextBox = New System.Windows.Forms.TextBox()
+        Me.LastnameTextBox = New System.Windows.Forms.TextBox()
+        Me.StudentComboBox = New System.Windows.Forms.ComboBox()
+        Me.LoadDataButton = New System.Windows.Forms.Button()
+        Me.SaveDataButton = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button1
+        'CreateCourseButton
         '
-        resources.ApplyResources(Me.Button1, "Button1")
-        Me.Button1.Name = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.CreateCourseButton, "CreateCourseButton")
+        Me.CreateCourseButton.Name = "CreateCourseButton"
+        Me.CreateCourseButton.UseVisualStyleBackColor = True
         '
-        'CheckedListBox1
+        'CoursesListBox
         '
-        resources.ApplyResources(Me.CheckedListBox1, "CheckedListBox1")
-        Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Name = "CheckedListBox1"
+        resources.ApplyResources(Me.CoursesListBox, "CoursesListBox")
+        Me.CoursesListBox.FormattingEnabled = True
+        Me.CoursesListBox.Name = "CoursesListBox"
         '
         'Label1
         '
@@ -65,17 +65,17 @@ Partial Class MainForm
         '
         resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
-        Me.GroupBox1.Controls.Add(Me.Button4)
+        Me.GroupBox1.Controls.Add(Me.PhoneTextBox)
+        Me.GroupBox1.Controls.Add(Me.EditStudentButton)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.RichTextBox1)
+        Me.GroupBox1.Controls.Add(Me.StundentNoticeTextBox)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox1.Controls.Add(Me.BirthdayDatePicker)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.FirstnameTextBox)
+        Me.GroupBox1.Controls.Add(Me.LastnameTextBox)
+        Me.GroupBox1.Controls.Add(Me.StudentComboBox)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
         '
@@ -84,36 +84,36 @@ Partial Class MainForm
         resources.ApplyResources(Me.Label6, "Label6")
         Me.Label6.Name = "Label6"
         '
-        'TextBox3
+        'PhoneTextBox
         '
-        resources.ApplyResources(Me.TextBox3, "TextBox3")
-        Me.TextBox3.Name = "TextBox3"
+        resources.ApplyResources(Me.PhoneTextBox, "PhoneTextBox")
+        Me.PhoneTextBox.Name = "PhoneTextBox"
         '
-        'Button4
+        'EditStudentButton
         '
-        resources.ApplyResources(Me.Button4, "Button4")
-        Me.Button4.Name = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.EditStudentButton, "EditStudentButton")
+        Me.EditStudentButton.Name = "EditStudentButton"
+        Me.EditStudentButton.UseVisualStyleBackColor = True
         '
         'Label5
         '
         resources.ApplyResources(Me.Label5, "Label5")
         Me.Label5.Name = "Label5"
         '
-        'RichTextBox1
+        'StundentNoticeTextBox
         '
-        resources.ApplyResources(Me.RichTextBox1, "RichTextBox1")
-        Me.RichTextBox1.Name = "RichTextBox1"
+        resources.ApplyResources(Me.StundentNoticeTextBox, "StundentNoticeTextBox")
+        Me.StundentNoticeTextBox.Name = "StundentNoticeTextBox"
         '
         'Label4
         '
         resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
         '
-        'DateTimePicker1
+        'BirthdayDatePicker
         '
-        resources.ApplyResources(Me.DateTimePicker1, "DateTimePicker1")
-        Me.DateTimePicker1.Name = "DateTimePicker1"
+        resources.ApplyResources(Me.BirthdayDatePicker, "BirthdayDatePicker")
+        Me.BirthdayDatePicker.Name = "BirthdayDatePicker"
         '
         'Label3
         '
@@ -125,44 +125,44 @@ Partial Class MainForm
         resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
         '
-        'TextBox2
+        'FirstnameTextBox
         '
-        resources.ApplyResources(Me.TextBox2, "TextBox2")
-        Me.TextBox2.Name = "TextBox2"
+        resources.ApplyResources(Me.FirstnameTextBox, "FirstnameTextBox")
+        Me.FirstnameTextBox.Name = "FirstnameTextBox"
         '
-        'TextBox1
+        'LastnameTextBox
         '
-        resources.ApplyResources(Me.TextBox1, "TextBox1")
-        Me.TextBox1.Name = "TextBox1"
+        resources.ApplyResources(Me.LastnameTextBox, "LastnameTextBox")
+        Me.LastnameTextBox.Name = "LastnameTextBox"
         '
-        'ComboBox1
+        'StudentComboBox
         '
-        resources.ApplyResources(Me.ComboBox1, "ComboBox1")
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Name = "ComboBox1"
+        resources.ApplyResources(Me.StudentComboBox, "StudentComboBox")
+        Me.StudentComboBox.FormattingEnabled = True
+        Me.StudentComboBox.Name = "StudentComboBox"
         '
-        'Button2
+        'LoadDataButton
         '
-        resources.ApplyResources(Me.Button2, "Button2")
-        Me.Button2.Name = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.LoadDataButton, "LoadDataButton")
+        Me.LoadDataButton.Name = "LoadDataButton"
+        Me.LoadDataButton.UseVisualStyleBackColor = True
         '
-        'Button3
+        'SaveDataButton
         '
-        resources.ApplyResources(Me.Button3, "Button3")
-        Me.Button3.Name = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.SaveDataButton, "SaveDataButton")
+        Me.SaveDataButton.Name = "SaveDataButton"
+        Me.SaveDataButton.UseVisualStyleBackColor = True
         '
         'MainForm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.SaveDataButton)
+        Me.Controls.Add(Me.LoadDataButton)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.CheckedListBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.CoursesListBox)
+        Me.Controls.Add(Me.CreateCourseButton)
         Me.Name = "MainForm"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -170,23 +170,23 @@ Partial Class MainForm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents CheckedListBox1 As System.Windows.Forms.CheckedListBox
+    Friend WithEvents CreateCourseButton As System.Windows.Forms.Button
+    Friend WithEvents CoursesListBox As System.Windows.Forms.CheckedListBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents StudentComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents FirstnameTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents LastnameTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents BirthdayDatePicker As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents StundentNoticeTextBox As System.Windows.Forms.RichTextBox
+    Friend WithEvents EditStudentButton As System.Windows.Forms.Button
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents PhoneTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents LoadDataButton As System.Windows.Forms.Button
+    Friend WithEvents SaveDataButton As System.Windows.Forms.Button
 
 End Class

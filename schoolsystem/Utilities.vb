@@ -1,6 +1,8 @@
 ﻿Imports System.Security.Cryptography
 Imports System.Text
+
 Namespace Utilities
+
     Public Class HashFunc
 
         Public Function MD5(ByVal strString As String) As String
@@ -19,5 +21,7 @@ Namespace Utilities
             Next
             Return Res
         End Function
+
     End Class
+
 End Namespace

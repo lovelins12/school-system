@@ -117,6 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="CreateCourseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 28</value>
+  </data>
+  <data name="CreateCourseButton.Text" xml:space="preserve">
+    <value>Create Courses</value>
+  </data>
+  <data name="CoursesListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 274</value>
+  </data>
+  <data name="PhoneTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 20</value>
+  </data>
+  <data name="EditStudentButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 23</value>
+  </data>
+  <data name="EditStudentButton.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="StundentNoticeTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 211</value>
+  </data>
+  <data name="BirthdayDatePicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 20</value>
+  </data>
+  <data name="FirstnameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 20</value>
+  </data>
+  <data name="LastnameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 20</value>
+  </data>
+  <data name="StudentComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 21</value>
+  </data>
+  <data name="LoadDataButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 28</value>
+  </data>
+  <data name="LoadDataButton.Text" xml:space="preserve">
+    <value>Load Data</value>
+  </data>
+  <data name="SaveDataButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 28</value>
+  </data>
+  <data name="SaveDataButton.Text" xml:space="preserve">
+    <value>Save Data</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>School</value>
   </data>

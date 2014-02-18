@@ -25,7 +25,7 @@ Partial Class ErrorDialog
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ShowMoreButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -70,14 +70,14 @@ Partial Class ErrorDialog
         Me.Cancel_Button.TabIndex = 1
         Me.Cancel_Button.Text = "Cancel"
         '
-        'Button1
+        'ShowMoreButton
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 99)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(86, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Show more ..."
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ShowMoreButton.Location = New System.Drawing.Point(12, 99)
+        Me.ShowMoreButton.Name = "ShowMoreButton"
+        Me.ShowMoreButton.Size = New System.Drawing.Size(86, 23)
+        Me.ShowMoreButton.TabIndex = 1
+        Me.ShowMoreButton.Text = "Show more ..."
+        Me.ShowMoreButton.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -151,7 +151,7 @@ Partial Class ErrorDialog
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.ShowMoreButton)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -169,7 +169,7 @@ Partial Class ErrorDialog
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents OK_Button As System.Windows.Forms.Button
     Friend WithEvents Cancel_Button As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents ShowMoreButton As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label2 As System.Windows.Forms.Label

@@ -19,7 +19,7 @@ Public Class ErrorDialog
         If Not errorFullText Is Nothing Then
             RichTextBox1.Text = errorFullText
         Else
-            Button1.Visible = False
+            ShowMoreButton.Visible = False
         End If
 
         If noResult = False Then
@@ -33,15 +33,15 @@ Public Class ErrorDialog
 
     End Sub
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+    Private Sub ShowMoreButton_Click(sender As System.Object, e As System.EventArgs) Handles ShowMoreButton.Click
         Me.Height = Me.Height + 200
-        Button1.Visible = False
+        ShowMoreButton.Visible = False
         RichTextBox1.Visible = True
     End Sub
 
     Private Sub ErrorDialog_FormClosed(sender As System.Object, e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Height = 165
-        Button1.Visible = True
+        ShowMoreButton.Visible = True
         RichTextBox1.Visible = False
     End Sub
 End Class
