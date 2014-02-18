@@ -106,23 +106,21 @@ Public Class MainForm
         Try
             My.Computer.FileSystem.DeleteDirectory(My.Application.Info.DirectoryPath & "\files", FileIO.DeleteDirectoryOption.DeleteAllContents)
         Catch ex As Exception
-            ErrorDialog.Show()
-            ErrorDialog.SetVariables(My.Resources.error42, "Create the directory " + My.Application.Info.DirectoryPath + " files/? ", ex.Message.ToString, ex.ToString)
+            ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "Create the directory " + My.Application.Info.DirectoryPath + " files/? ", ex.Message.ToString, ex.ToString)
+            If ErrorDialog.DialogResult = Windows.Forms.DialogResult.Cancel Then Exit Sub
         End Try
         If Not IO.Directory.Exists(My.Application.Info.DirectoryPath & "\files") Then
             Try
                 IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\files")
             Catch ex As Exception
-                ErrorDialog.Show()
-                ErrorDialog.SetVariables(My.Resources.error42, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/!", ex.Message.ToString, ex.ToString, True, "OK")
+                ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/!", ex.Message.ToString, ex.ToString, True, "OK")
             End Try
         End If
         If Not IO.Directory.Exists(My.Application.Info.DirectoryPath & "\files\students") Then
             Try
                 IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\files\students")
             Catch ex As Exception
-                ErrorDialog.Show()
-                ErrorDialog.SetVariables(My.Resources.error42, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/stundents/!", ex.Message.ToString, ex.ToString, True, "OK")
+                ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/stundents/!", ex.Message.ToString, ex.ToString, True, "OK")
             End Try
         End If
         File.Delete(My.Application.Info.DirectoryPath & "\files\students.dat")
@@ -137,17 +135,13 @@ Public Class MainForm
                     My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\files\students\" + item.getID.ToString + ".coursesList", kursid, True)
                 Next
             Next
-        Else
-            ErrorDialog.Show()
-            ErrorDialog.SetVariables(My.Resources.error42, "No Studnents" + My.Application.Info.DirectoryPath + " files/stundents/!", "You must create Student", Nothing, True, "OK")
-            Exit Sub
+        Else : ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "No Studnents" + My.Application.Info.DirectoryPath + " files/stundents/!", "You must create Student", Nothing, True, "OK") : Exit Sub
         End If
         If Not IO.Directory.Exists(My.Application.Info.DirectoryPath & "\files\courses") Then
             Try
                 IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\files\courses")
             Catch ex As Exception
-                ErrorDialog.Show()
-                ErrorDialog.SetVariables(My.Resources.error42, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/courses/!", ex.Message.ToString, ex.ToString, True, "OK")
+                ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/courses/!", ex.Message.ToString, ex.ToString, True, "OK")
             End Try
         End If
         If courseList.Count > 0 Then
@@ -158,18 +152,20 @@ Public Class MainForm
                 text = item.desc.ToString & vbCrLf & item.name.ToString & vbCrLf
                 My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\files\courses\" + item.getID.ToString + ".course", text, True)
             Next
-        Else
-            ErrorDialog.Show()
-            ErrorDialog.SetVariables(My.Resources.error42, "No Studnents" + My.Application.Info.DirectoryPath + " files/stundents/!", "You must create Student", Nothing, True, "OK")
-            Exit Sub
+        Else ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "No Studnents" + My.Application.Info.DirectoryPath + " files/stundents/!", "You must create Student", Nothing, True, "OK") : Exit Sub
         End If
     End Sub
 
     Private Sub LoadDataButton_Click(sender As System.Object, e As System.EventArgs) Handles LoadDataButton.Click
+        If Not IO.Directory.Exists(My.Application.Info.DirectoryPath & "\files") Then ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "The integrity of the data is not given", "", "Directory " & My.Application.Info.DirectoryPath & "\file\ not found !", True, "OK") : Exit Sub
+        If Not IO.Directory.Exists(My.Application.Info.DirectoryPath & "\files\students") Then ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "The integrity of the data is not given", "", "Directory " & My.Application.Info.DirectoryPath & "\file\students\ not found !", True, "OK") : Exit Sub
+        If Not IO.Directory.Exists(My.Application.Info.DirectoryPath & "\files\courses") Then ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "The integrity of the data is not given", "", "Directory " & My.Application.Info.DirectoryPath & "\file\courses\ not found !", True, "OK") : Exit Sub
+        If Not File.Exists(My.Application.Info.DirectoryPath & "\files\students.dat") Then ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "The integrity of the data is not given", "", "Directory " & My.Application.Info.DirectoryPath & "\file\students.dat not found !", True, "OK") : Exit Sub
+        If Not File.Exists(My.Application.Info.DirectoryPath & "\files\courses.dat") Then ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.error42, "The integrity of the data is not given", "", "Directory " & My.Application.Info.DirectoryPath & "\file\courses.dat not found !", True, "OK") : Exit Sub
 
     End Sub
 
-    'Funktionen
+    'Functions
 
     Private Sub refreshKurse()
         CoursesListBox.Items.Clear()
