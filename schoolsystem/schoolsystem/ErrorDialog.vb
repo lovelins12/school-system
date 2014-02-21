@@ -2,12 +2,12 @@
 
 Public Class ErrorDialog
 
-    Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
 
-    Private Sub Cancel_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Cancel_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel_Button.Click
         Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Close()
     End Sub
@@ -34,14 +34,18 @@ Public Class ErrorDialog
     End Sub
 
     Private Sub ShowMoreButton_Click(sender As System.Object, e As System.EventArgs) Handles ShowMoreButton.Click
-        Me.Height = Me.Height + 200
+        Me.Height = 385
         ShowMoreButton.Visible = False
         RichTextBox1.Visible = True
+        OK_Button.Top = 324
+        Cancel_Button.Top = 324
     End Sub
 
     Private Sub ErrorDialog_FormClosed(sender As System.Object, e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Height = 165
         ShowMoreButton.Visible = True
         RichTextBox1.Visible = False
+        OK_Button.Top = 92
+        Cancel_Button.Top = 92
     End Sub
 End Class

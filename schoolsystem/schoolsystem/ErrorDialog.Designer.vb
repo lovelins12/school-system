@@ -78,9 +78,11 @@ Partial Class ErrorDialog
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 8)
+        Me.PictureBox1.Image = Global.schoolsystem.My.Resources.Resources.Error48
+        Me.PictureBox1.ImageLocation = ""
+        Me.PictureBox1.Location = New System.Drawing.Point(30, 24)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.Size = New System.Drawing.Size(48, 48)
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
         '
@@ -104,6 +106,7 @@ Partial Class ErrorDialog
         '
         'OK_Button
         '
+        Me.OK_Button.AllowDrop = True
         Me.OK_Button.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.OK_Button.Location = New System.Drawing.Point(416, 95)
         Me.OK_Button.Name = "OK_Button"
@@ -113,6 +116,8 @@ Partial Class ErrorDialog
         '
         'Cancel_Button
         '
+        Me.Cancel_Button.AllowDrop = True
+        Me.Cancel_Button.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel_Button.Location = New System.Drawing.Point(489, 95)
         Me.Cancel_Button.Name = "Cancel_Button"
@@ -124,7 +129,7 @@ Partial Class ErrorDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(568, 126)
+        Me.ClientSize = New System.Drawing.Size(568, 137)
         Me.Controls.Add(Me.OK_Button)
         Me.Controls.Add(Me.Cancel_Button)
         Me.Controls.Add(Me.RichTextBox3)

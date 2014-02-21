@@ -10,15 +10,13 @@ Public Class MainForm
         CreateCourseDialog.TextBox2.Text = ""
         Dim dr As DialogResult = CreateCourseDialog.ShowDialog()
         If dr = System.Windows.Forms.DialogResult.OK Then
-            Dim newKurs As New Course(CreateCourseDialog.TextBox1.Text,
-                                    CreateCourseDialog.TextBox2.Text
-                                    )
+            Dim newCourse As New Course(CreateCourseDialog.TextBox1.Text, CreateCourseDialog.TextBox2.Text)
             Dim found As Boolean = False
             For i = 0 To courseList.Count - 1
-                If courseList.Item(i).getID Is newKurs.getID Then found = True
+                If courseList.Item(i).getID Is newCourse.getID Then found = True
             Next
             If Not found Then
-                courseList.Add(newKurs)
+                courseList.Add(newCourse)
             End If
             refreshKurse()
         End If
@@ -55,22 +53,18 @@ Public Class MainForm
     Private Sub EditStudentButton_Click(sender As System.Object, e As System.EventArgs) Handles EditStudentButton.Click
         If StudentComboBox.SelectedIndex < 0 Then Exit Sub
         If StudentComboBox.SelectedIndex = 0 Then
-            Dim newSchueler As New Student(LastnameTextBox.Text,
-                                            FirstnameTextBox.Text,
-                                            BirthdayDatePicker.Value,
-                                            PhoneTextBox.Text
-                                            )
-            newSchueler.notice = StundentNoticeTextBox.Text
+            Dim newStudent As New Student(LastnameTextBox.Text, FirstnameTextBox.Text, BirthdayDatePicker.Value, PhoneTextBox.Text )
+            newStudent.notice = StundentNoticeTextBox.Text
             For j = 0 To CoursesListBox.Items.Count - 1
                 If CoursesListBox.GetItemChecked(j) Then
                     Dim k As Integer = 0
                     While Not CoursesListBox.SelectedIndex = courseList(k).tmpID
                         k += 1
                     End While
-                    newSchueler.addCourse(courseList(k).getID.ToString)
+                    newStudent.addCourse(courseList(k).getID.ToString)
                 End If
             Next
-            studentList.Add(newSchueler)
+            studentList.Add(newStudent)
         Else
             Dim i As Integer = 1
             While Not StudentComboBox.SelectedIndex = studentList(i).tmpID
@@ -110,18 +104,12 @@ Public Class MainForm
             If ErrorDialog.DialogResult = Windows.Forms.DialogResult.Cancel Then Exit Sub
         End Try
         If Not IO.Directory.Exists(My.Application.Info.DirectoryPath & "\files") Then
-            Try
-                IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\files")
-            Catch ex As Exception
-                ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.Error48, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/!", ex.Message.ToString, ex.ToString, True, "OK")
-            End Try
+            Try : IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\files")
+            Catch ex As Exception : ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.Error48, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/!", ex.Message.ToString, ex.ToString, True, "OK") : End Try
         End If
         If Not IO.Directory.Exists(My.Application.Info.DirectoryPath & "\files\students") Then
-            Try
-                IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\files\students")
-            Catch ex As Exception
-                ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.Error48, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/stundents/!", ex.Message.ToString, ex.ToString, True, "OK")
-            End Try
+            Try : IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\files\students")
+            Catch ex As Exception : ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.Error48, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/stundents/!", ex.Message.ToString, ex.ToString, True, "OK") : End Try
         End If
         File.Delete(My.Application.Info.DirectoryPath & "\files\students.dat")
         If studentList.Count > 0 Then
@@ -131,18 +119,15 @@ Public Class MainForm
                 My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\files\students.dat", text, True)
                 text = item.lastname.ToString & vbCrLf & item.firstname.ToString & vbCrLf & item.bday.ToString & vbCrLf & item.tel.ToString & vbCrLf & item.notice.ToString & vbCrLf
                 My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\files\students\" + item.getID.ToString + ".student", text, True)
-                For Each kursid As String In item.courses
-                    My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\files\students\" + item.getID.ToString + ".coursesList", kursid, True)
+                For Each courseid As String In item.courses
+                    My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\files\students\" + item.getID.ToString + ".coursesList", courseid, True)
                 Next
             Next
-        Else : ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.Error48, "No Studnents" + My.Application.Info.DirectoryPath + " files/stundents/!", "You must create Student", Nothing, True, "OK") : Exit Sub
+        Else : ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.Error48, "No Studnents", "You must create Student", Nothing, True, "OK") : Exit Sub
         End If
         If Not IO.Directory.Exists(My.Application.Info.DirectoryPath & "\files\courses") Then
-            Try
-                IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\files\courses")
-            Catch ex As Exception
-                ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.Error48, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/courses/!", ex.Message.ToString, ex.ToString, True, "OK")
-            End Try
+            Try : IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\files\courses")
+            Catch ex As Exception : ErrorDialog.Show() : ErrorDialog.SetVariables(My.Resources.Error48, "Can't create the directory" + My.Application.Info.DirectoryPath + " files/courses/!", ex.Message.ToString, ex.ToString, True, "OK") : End Try
         End If
         If courseList.Count > 0 Then
             For Each item As Course In courseList
