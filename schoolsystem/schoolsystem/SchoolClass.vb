@@ -1,6 +1,6 @@
-﻿Imports School.Utilities
+﻿Imports SchoolSystem.Utilities
 
-Namespace School
+Namespace SchoolClass
 
     Public Class People
 

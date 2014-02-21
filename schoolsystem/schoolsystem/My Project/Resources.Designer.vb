@@ -39,7 +39,7 @@ Namespace My.Resources
         Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("School.Resources", GetType(Resources).Assembly)
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("schoolsystem.Resources", GetType(Resources).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan
@@ -183,9 +183,9 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property error42() As System.Drawing.Bitmap
+        Friend ReadOnly Property Error48() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("error42", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Error48", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
